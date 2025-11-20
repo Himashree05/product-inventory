@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import connectDb from "./config/db.js"
 import InventoryRoutes from "./routes/inventory.routes.js"
+import CustomerRoutes from "./routes/customer.routes.js"
 
 dotenv.config()
 const app = express()
@@ -14,6 +15,7 @@ connectDb();
 
 
 app.use("/inventory",InventoryRoutes)
+app.use("/user",CustomerRoutes)
 
 
 app.get('/',(req,res)=>{
